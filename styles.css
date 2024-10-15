@@ -39,7 +39,8 @@ section{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    opacity: 0;
+    transition: opacity 0.5s ease;
+
 }
 
 .intro h1{
@@ -48,7 +49,7 @@ section{
 }
 
 .intro button,
-.options button{
+.match button{
     width: 150px;
     height: 50px;
     background: none;
@@ -57,6 +58,7 @@ section{
     font-size: 20px;
     background: rgb(45,117,96);
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .match{
@@ -64,7 +66,8 @@ section{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-   
+    transition: opacity 0.5s ease 0.5s;
+
 }
 
 
@@ -86,4 +89,14 @@ section{
 
 .player-hand{
     transform: rotateY(180deg);
+}
+
+div.fadeOut{
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.fadeIn{
+    opacity: 1;
+    pointer-events: all;
 }
