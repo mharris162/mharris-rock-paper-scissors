@@ -3,14 +3,14 @@ const game = () => {
     let cScore = 0;
 
     //start the game
-const startGame = () => {
-    const playBtn = document.querySelector(".intro button");
-    const introScreen = document.querySelector(".intro");
-    const match = document.querySelector(".match");
+    const startGame = () => {
+        const playBtn = document.querySelector(".intro button");
+        const introScreen = document.querySelector(".intro");
+        const match = document.querySelector(".match");
 
-    playBtn.addEventListener("click", () => {
-        introScreen.classList.add('fadeOut');
-        match.classList.add('fadeIn');
+        playBtn.addEventListener("click", () => {
+            introScreen.classList.add('fadeOut');
+            match.classList.add('fadeIn');
         });
     };
 
@@ -20,11 +20,11 @@ const playMatch = () => {
     const options = document.querySelectorAll(".options button");
     const playerHand = document.querySelector(".player-hand");
     const computerHand = document.querySelector(".computer-hand");
-    const hands = document.querySelectorAll('.hands img');
+    const hands = document.querySelectorAll(".hands img");
 
     /// also not working 
     hands.forEach(hand => {
-        hand.addEventListener('animatioend', function(){
+        hand.addEventListener('animationend', function(){
             this.style.animation = "";
         });
 
@@ -42,16 +42,12 @@ const playMatch = () => {
             // where we call to compare hands
             setTimeout(() => {
                 compareHands(this.textContent, computerChoice);
-                playerHand.src = `./assets/${this.textContent}.png`; ///something wrong with code- makes player hands disappear
+                playerHand.src = `./assets/${this.textContent}.png`; 
                 computerHand.src = `./assets/${computerChoice}.png`;
 
             }, 2000);
 
-            //compareHands(this.textContent, computerChoice);//something wrong with code- does not change text- guessing has to do with this?
-
-            //update images
-            //playerHand.src = `./assets/${this.textContent}.png`; ///something wrong with code- makes player hands disappear
-            //computerHand.src = `./assets/${computerChoice}.png`;
+           
 
 
             //animation
